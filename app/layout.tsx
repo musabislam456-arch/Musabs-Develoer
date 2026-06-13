@@ -43,6 +43,9 @@ export const metadata: Metadata = {
       "Premium, high-performance websites and AI-integrated web applications built with Next.js and React.",
     type: "website",
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

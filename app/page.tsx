@@ -1,24 +1,27 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import PremiumHero from "@/components/PremiumHero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import Services from "@/components/Services";
 import WhyChooseMe from "@/components/WhyChooseMe";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBackToTop from "@/components/FloatingBackToTop";
+import AnimatedStats from "@/components/AnimatedStats";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
+        <PremiumHero />
         <About />
+        <AnimatedStats />
         <Skills />
-        <Projects />
+        <FeaturedProjects />
         <Services />
         <WhyChooseMe />
         <Testimonials />
@@ -26,6 +29,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingBackToTop />
+      <WhatsAppButton />
     </>
   );
 }
