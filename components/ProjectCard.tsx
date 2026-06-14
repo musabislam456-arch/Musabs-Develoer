@@ -9,6 +9,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { FiExternalLink, FiGithub, FiCpu } from "react-icons/fi";
+import Image from "next/image";
 import { Project } from "@/lib/data";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -69,11 +70,15 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div style={{ transform: "translateZ(20px)" }} className="relative p-5 sm:p-6">
         <div className="relative mb-5 h-44 sm:h-48 overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 via-accent/6 to-primary-soft/6">
           {project.screenshot ? (
-            <img
-              src={project.screenshot}
-              alt={`${project.title} screenshot`}
-              className="w-full h-full object-cover"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={project.screenshot}
+                alt={`${project.title} screenshot`}
+                fill
+                sizes="(max-width: 640px) 100vw, 33vw"
+                className="object-cover"
+              />
+            </div>
           ) : (
             <iframe
               src={project.liveUrl}
