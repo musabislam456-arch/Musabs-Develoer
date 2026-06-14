@@ -111,34 +111,88 @@ export type Project = {
   githubUrl: string;
   tag: string;
 };
+export type ProjectExperience = {
+  challenge?: string;
+  solution?: string;
+  results?: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  liveUrl: string;
+  githubUrl?: string;
+  tag?: string;
+  screenshot?: string;
+  experience?: ProjectExperience;
+};
 
 export const projects: Project[] = [
   {
-    title: "AI Create",
+    title: "Creator AI",
     description:
-      "An AI-powered content generation platform that helps users create marketing copy, images, and ideas in seconds using integrated AI models.",
-    tech: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS"],
+      "An AI-powered content creation platform that helps users generate creative and professional content through intelligent automation and a modern UX.",
+    tech: ["Next.js", "React", "Tailwind CSS", "AI Integration", "Vercel"],
     liveUrl: "https://ai-create-pi.vercel.app",
-    githubUrl: "https://github.com/",
+    githubUrl: "",
     tag: "AI Platform",
+    screenshot: "",
+    experience: {
+      challenge:
+        "Enable non-technical users to rapidly produce professional content at scale.",
+      solution:
+        "Built an intuitive editor and AI-assisted templates that generate copy and ideas with a streamlined UX.",
+      results: "Faster content production and higher user engagement via AI automation.",
+    },
   },
   {
     title: "AuraCV",
     description:
-      "A smart resume builder that uses AI to craft professional, ATS-friendly CVs with elegant templates and real-time editing.",
-    tech: ["Next.js", "React", "Firebase", "Framer Motion"],
+      "An AI-powered resume builder that helps users create professional ATS-friendly resumes and CVs using smart templates and automation.",
+    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript", "AI Integration"],
     liveUrl: "https://auracv.vercel.app",
-    githubUrl: "https://github.com/",
-    tag: "SaaS Web App",
+    githubUrl: "",
+    tag: "Resume Builder",
+    screenshot: "",
+    experience: {
+      challenge: "Create ATS-compliant resumes without manual formatting headaches.",
+      solution:
+        "Developed template-driven export, live preview, and AI-suggested phrasing for professional results.",
+      results: "Higher conversion for users creating polished CVs, improved time-to-ready resumes.",
+    },
+  },
+  {
+    title: "Zaragoza Restaurant",
+    description:
+      "A modern restaurant website designed to showcase menus, services, food items, and customer information through a visually appealing and responsive experience.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+    liveUrl: "https://zaragoza-delta.vercel.app",
+    githubUrl: "",
+    tag: "Restaurant",
+    screenshot: "",
+    experience: {
+      challenge: "Increase online reservations and showcase menu visually.",
+      solution:
+        "Built a mobile-first landing experience with prominent CTAs, interactive menu, and contact integration.",
+      results: "Improved user engagement and easier customer reach via clear CTAs.",
+    },
   },
   {
     title: "Future AI Tech",
     description:
-      "A futuristic technology showcase website highlighting AI-driven services with immersive visuals and smooth scroll experiences.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+      "A futuristic technology website focused on AI solutions, innovation, and modern digital experiences with a premium UI.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
     liveUrl: "https://futureaitech.site",
-    githubUrl: "https://github.com/",
-    tag: "Business Website",
+    githubUrl: "",
+    tag: "Technology",
+    screenshot: "",
+    experience: {
+      challenge: "Convey a cutting-edge brand identity while keeping clarity.",
+      solution:
+        "Implemented immersive animations, clear service messaging, and interactive demos to highlight offerings.",
+      results: "Stronger brand perception and improved visitor time-on-site.",
+    },
   },
 ];
 

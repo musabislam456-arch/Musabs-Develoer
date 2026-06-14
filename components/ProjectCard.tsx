@@ -54,6 +54,8 @@ export default function ProjectCard({ project }: { project: Project }) {
         rotateY,
         transformStyle: "preserve-3d",
       }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
       className="group relative h-full rounded-2xl glass shadow-glass transition-shadow duration-300 hover:shadow-glass-lg"
     >
       {/* Cursor glow */}
@@ -65,12 +67,28 @@ export default function ProjectCard({ project }: { project: Project }) {
       />
 
       <div style={{ transform: "translateZ(20px)" }} className="relative p-5 sm:p-6">
-        {/* Image placeholder */}
-        <div className="relative mb-5 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-primary/15 via-accent/10 to-primary-soft/10 sm:h-48">
-          <FiCpu className="text-5xl text-primary/40" />
+        <div className="relative mb-5 h-44 sm:h-48 overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 via-accent/6 to-primary-soft/6">
+          {project.screenshot ? (
+            <img
+              src={project.screenshot}
+              alt={`${project.title} screenshot`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <iframe
+              src={project.liveUrl}
+              title={project.title}
+              loading="lazy"
+              className="w-full h-full border-0"
+              sandbox="allow-scripts allow-forms allow-same-origin"
+            />
+          )}
+
           <span className="absolute left-3 top-3 rounded-full glass px-3 py-1 font-mono text-[11px] font-semibold text-ink">
             {project.tag}
           </span>
+
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent to-black/10 opacity-40" />
         </div>
 
         <h3 className="font-display text-xl font-semibold text-ink">
@@ -79,6 +97,27 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           {project.description}
         </p>
+
+        <div className="mt-3 hidden sm:block text-sm text-ink-soft">
+          {project.experience?.challenge && (
+            <div className="mb-2">
+              <div className="font-semibold text-ink">Challenge</div>
+              <div className="text-sm">{project.experience.challenge}</div>
+            </div>
+          )}
+          {project.experience?.solution && (
+            <div className="mb-2">
+              <div className="font-semibold text-ink">Solution</div>
+              <div className="text-sm">{project.experience.solution}</div>
+            </div>
+          )}
+          {project.experience?.results && (
+            <div>
+              <div className="font-semibold text-ink">Results</div>
+              <div className="text-sm">{project.experience.results}</div>
+            </div>
+          )}
+        </div>
 
         {/* Tech stack */}
         <div className="mt-4 flex flex-wrap gap-2">
