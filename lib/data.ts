@@ -102,15 +102,6 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
-
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  liveUrl: string;
-  githubUrl: string;
-  tag: string;
-};
 export type ProjectExperience = {
   challenge?: string;
   solution?: string;
