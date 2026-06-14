@@ -5,6 +5,7 @@ import { FiArrowRight, FiMessageCircle, FiCode } from "react-icons/fi";
 import ParticlesBackground from "./ParticlesBackground";
 import TypingText from "./TypingText";
 import { heroRoles } from "@/lib/data";
+import HeroPortrait from "./HeroPortrait";
 
 const codeLines = [
   { indent: 0, text: "const developer = {" },
@@ -107,70 +108,14 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Floating code terminal */}
+        {/* Right: Portrait */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 30 }}
+          initial={{ opacity: 0, scale: 0.96, y: 18 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
-          <div className="animate-float">
-            <div className="glass-strong relative overflow-hidden rounded-2xl shadow-glass-lg">
-              {/* Terminal header */}
-              <div className="flex items-center gap-2 border-b border-line px-4 py-3">
-                <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-                <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-                <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                <span className="ml-3 font-mono text-xs text-ink-faint">
-                  musab.dev — profile.ts
-                </span>
-              </div>
-
-              {/* Code body */}
-              <div className="space-y-2 p-6 font-mono text-sm leading-relaxed sm:text-[15px]">
-                {codeLines.map((line, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.6 + i * 0.12 }}
-                    style={{ paddingLeft: `${line.indent * 1.25}rem` }}
-                    className="text-ink-soft"
-                  >
-                    <CodeLine text={line.text} />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Floating badge chips */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
-            className="absolute -left-6 -top-6 hidden items-center gap-2 rounded-2xl glass-strong px-4 py-3 shadow-glass-lg sm:flex animate-float-slow"
-          >
-            <FiCode className="text-primary" />
-            <span className="font-mono text-xs font-medium text-ink">
-              Next.js 15
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.6 }}
-            className="absolute -bottom-6 -right-4 hidden items-center gap-2 rounded-2xl glass-strong px-4 py-3 shadow-glass-lg sm:flex animate-float"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            <span className="font-mono text-xs font-medium text-ink">
-              AI-Ready
-            </span>
-          </motion.div>
+          <HeroPortrait />
         </motion.div>
       </div>
     </section>
