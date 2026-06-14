@@ -54,7 +54,7 @@ export default function HeroPortrait() {
         <div className="relative overflow-hidden rounded-3xl bg-white/3 ring-1 ring-white/6 shadow-glass-lg">
           <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[520px]">
             <Image
-              src="/images/profile.svg"
+              src="/images/Generated-Image-2026-04-08-13-18.svg"
               alt="Musab Bin Umair portrait"
               fill
               sizes="(max-width: 640px) 100vw, 40vw"
